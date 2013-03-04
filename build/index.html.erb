@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title><%= @title %></title>
+</head>
+<body style="padding: 0; margin: 0; background-color: #$<%= bg_color %>;">
+	<% if @trace %><div id="haxe:trace" style="position: absolute; z-index: 2147483647; display: none;"></div><% end %>
+	<div id="haxe:jeash" style="background-color: #<%= bg_color %>; width: <%= width %>; height: <%= height %>" data-framerate="<%= fps %>"></div>
+	<% if @debug %><script type="text/javascript" src="./webgl-debug.js"></script><% end %>
+	<script>function winParameters () { return {}; }</script>
+	<script id="haxe:jeash:script" type="text/javascript" src="./<%= @target %>"></script>
+</body>
+</html>
